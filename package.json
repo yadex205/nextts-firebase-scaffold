@@ -1,0 +1,9 @@
+{
+  "name": "@yadex205/nextts-firebase-scaffold",
+  "version": "0.0.0",
+  "description": "Scaffold of Next.js powered website with TypeScript and preact for Firebase Cloud Function",
+  "main": "index.js",
+  "repository": "https://github.com/yadex205/nextts-firebase-scaffold",
+  "author": "Kanon Kakuno <yadex205@outlook.jp>",
+  "license": "MIT"
+}
