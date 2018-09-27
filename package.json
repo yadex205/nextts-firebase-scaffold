@@ -5,5 +5,27 @@
   "main": "index.js",
   "repository": "https://github.com/yadex205/nextts-firebase-scaffold",
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:app && npm run build:functions && npm run build:conf && npm run build:install",
+    "build:app": "next build ./src/app && cpx \"./src/app/.next/**/*\" ./dist/functions/app",
+    "build:functions": "cpx ./src/functions/index.js ./dist/functions",
+    "build:conf": "cpx ./package.json ./dist/functions",
+    "build:install": "cd ./dist/functions && npm install",
+    "clean": "rimraf ./dist",
+    "develop": "node ./src/functions/index.js",
+    "serve": "cross-env NODE_ENV=production firebase serve --only functions"
+  },
+  "dependencies": {
+    "firebase-admin": "^6.0.0",
+    "firebase-functions": "^2.0.5",
+    "next": "^7.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "cross-env": "^5.2.0",
+    "firebase-tools": "^4.2.1"
+  }
 }
