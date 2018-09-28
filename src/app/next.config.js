@@ -1,4 +1,4 @@
 const withTypeScript = require('@zeit/next-typescript');
 const withPreact = require('@zeit/next-preact');
 
-module.exports = withPreact(withTypeScript());
+module.exports = withTypeScript(withPreact());

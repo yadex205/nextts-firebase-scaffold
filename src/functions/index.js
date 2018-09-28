@@ -3,10 +3,9 @@ const { resolve } = require('path');
 const functions = require('firebase-functions');
 require('@zeit/next-preact/alias')();
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 3000;
-
-const conf = isDevelopment ? {
+const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production';
+const PORT = process.env.PORT || 3000;
+const NEXT_CONF = IS_DEVELOPMENT ? {
   dev: true,
   dir: resolve(__dirname, '../app')
 } : {
@@ -14,11 +13,16 @@ const conf = isDevelopment ? {
   conf: { distDir: 'app' }
 };
 
-var app = require('next')(conf);
+var app = require('next')(NEXT_CONF);
 var handle = app.getRequestHandler();
 
-if (isDevelopment) {
-  app.prepare().then(() => createServer(handle).listen(port));
+if (IS_DEVELOPMENT) {
+  app.prepare().then(() => {
+    const server = createServer(handle);
+    server.listen(PORT, () => {
+      console.log(`Next.js dev server is listening on http://localhost:${PORT}`)
+    });
+  });
 }
 
 exports.next = functions.https.onRequest((req, res) => {
