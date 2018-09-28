@@ -7,5 +7,6 @@ const sassGlobImporter = require('node-sass-glob-importer');
 module.exports = withSass(withTypeScript(withPreact({
   sassLoaderOptions: {
     importer: sassGlobImporter()
-  }
+  },
+  distDir: '../../dist/app'
 })));

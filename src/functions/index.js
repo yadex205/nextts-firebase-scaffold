@@ -13,8 +13,8 @@ const NEXT_CONF = IS_DEVELOPMENT ? {
   conf: { distDir: 'app' }
 };
 
-var app = require('next')(NEXT_CONF);
-var handle = app.getRequestHandler();
+let app = require('next')(NEXT_CONF);
+let handle = app.getRequestHandler();
 
 if (IS_DEVELOPMENT) {
   app.prepare().then(() => {

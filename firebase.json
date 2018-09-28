@@ -1,9 +1,9 @@
 {
   "functions": {
-    "source": "dist/functions"
+    "source": "dist"
   },
   "hosting": {
-    "public": "./dist/public",
+    "public": "dist/public",
     "rewrites": [
       { "source": "**", "function": "next" }
     ]
