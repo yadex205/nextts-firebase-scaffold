@@ -1,8 +1,8 @@
 {
-  "name": "@yadex205/nextts-firebase-scaffold",
+  "name": "@yadex205/scaffold-firebase-ssr",
   "version": "0.3.2",
-  "description": "Scaffold of Next.js powered website with TypeScript and preact for Firebase Cloud Function",
-  "repository": "https://github.com/yadex205/nextts-firebase-scaffold",
+  "description": "SSR website scaffold for Firebase",
+  "repository": "https://github.com/yadex205/scaffold-firebase-ssr",
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
   "license": "MIT",
   "scripts": {

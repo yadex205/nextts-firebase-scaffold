@@ -1,6 +1,6 @@
 const Header =  () => (
   <header className="o-header">
-    @yadex205/nextts-firebase-scaffold
+    @yadex205/scaffold-firebase-ssr
   </header>
 );
 

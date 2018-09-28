@@ -1,13 +1,15 @@
-nextts-firebase-scaffold
-========================
+@yadex205/scaffold-firebase-ssr
+===============================
 
 What's this?
-============
+------------
 
-A scaffold of Next.js website for Firebase Function, with power of
+A SSR website scaffold for Firebase, with power of
 
+* Next.js
+* Preact
 * TypeScript
-* Preact (https://preactjs.com)
+* SASS (glob import available!)
 
 
 Setup
@@ -19,7 +21,7 @@ npm install -g firebase-tools
 
 # Install packages
 npm install                   # for npm user
-yarn install --ignore-engines # for Yarn user (MUST apply --ignore-engines)
+yarn install --ignore-engines # for yarn user (MUST apply --ignore-engines)
 
 # Setting project
 firebase use --add
