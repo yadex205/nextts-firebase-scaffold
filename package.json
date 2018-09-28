@@ -14,7 +14,7 @@
     "build:install": "cd ./dist/functions && npm install",
     "clean": "rimraf ./dist",
     "develop": "node ./src/functions/index.js",
-    "serve": "cross-env NODE_ENV=production firebase serve --only functions"
+    "emulate": "cross-env NODE_ENV=production firebase serve --only functions"
   },
   "engines": {
     "node": "8"
