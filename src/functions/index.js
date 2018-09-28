@@ -1,6 +1,7 @@
 const { createServer } = require('http');
 const { resolve } = require('path');
 const functions = require('firebase-functions');
+require('@zeit/next-preact/alias')();
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
