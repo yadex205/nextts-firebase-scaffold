@@ -6,14 +6,15 @@
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:app && npm run build:functions && npm run build:conf && npm run build:install",
+    "build": "npm run build:app && npm run build:public && npm run build:functions && npm run build:conf && npm run build:install",
     "build:app": "next build ./src/app && cpx \"./src/app/.next/**/*\" ./dist/functions/app",
+    "build:public": "cpx \"./src/app/.next/static/**/*\" ./dist/public/_next/static",
     "build:functions": "cpx ./src/functions/index.js ./dist/functions",
     "build:conf": "cpx ./package.json ./dist/functions",
     "build:install": "cd ./dist/functions && npm install",
     "clean": "rimraf ./dist",
     "develop": "node ./src/functions/index.js",
-    "emulate": "cross-env NODE_ENV=production firebase serve --only functions"
+    "emulate": "cross-env NODE_ENV=production firebase serve --only hosting,functions"
   },
   "engines": {
     "node": "8"
