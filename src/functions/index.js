@@ -1,6 +1,7 @@
 const { createServer } = require('http');
-const functions = require('firebase-functions');
 const { resolve } = require('path');
+const functions = require('firebase-functions');
+
 const isDevelopment = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
 
