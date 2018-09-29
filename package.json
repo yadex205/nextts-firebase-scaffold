@@ -6,10 +6,9 @@
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
   "license": "MIT",
   "scripts": {
-    "build": "jake build",
-    "clean": "jake clean",
+    "build": "cross-env NODE_ENV=production jake clean build",
     "develop": "node ./src/functions/index.js",
-    "emulate": "jake clean build && cross-env NODE_ENV=production firebase serve --only hosting,functions"
+    "emulate": "npm run build && firebase serve --only hosting,functions"
   },
   "engines": {
     "node": "8"
@@ -25,7 +24,10 @@
     "preact-compat": "^3.18.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-transform-node-env-inline": "^0.4.3",
     "cross-env": "^5.2.0",
     "firebase-tools": "^4.2.1",
     "fs-extra": "^7.0.0",

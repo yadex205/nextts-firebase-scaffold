@@ -11,10 +11,12 @@ const NEXT_CONF = {
   conf: !IS_DEVELOPMENT ? { distDir: 'app' } : undefined
 };
 
-let app = require('next')(NEXT_CONF);
-let handle = app.getRequestHandler();
+let app;
+let handle;
 
 if (IS_DEVELOPMENT) {
+  app = require('next')(NEXT_CONF);
+  handle = app.getRequestHandler();
   app.prepare().then(() => {
     const server = createServer(handle);
     server.listen(PORT, () => {
@@ -24,5 +26,7 @@ if (IS_DEVELOPMENT) {
 }
 
 exports.next = functions.https.onRequest((req, res) => {
+  app = app || require('next')(NEXT_CONF);
+  handle = handle || app.getRequestHandler();
   return app.prepare().then(() => handle(req, res));
 });
