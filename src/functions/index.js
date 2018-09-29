@@ -5,12 +5,10 @@ require('@zeit/next-preact/alias')();
 
 const IS_DEVELOPMENT = process.env.NODE_ENV !== 'production';
 const PORT = process.env.PORT || 3000;
-const NEXT_CONF = IS_DEVELOPMENT ? {
-  dev: true,
-  dir: resolve(__dirname, '../app')
-} : {
-  dev: false,
-  conf: { distDir: 'app' }
+const NEXT_CONF = {
+  dev: IS_DEVELOPMENT,
+  dir: IS_DEVELOPMENT ? resolve(__dirname, '../app') : undefined,
+  conf: !IS_DEVELOPMENT ? { distDir: 'app' } : undefined
 };
 
 let app = require('next')(NEXT_CONF);
