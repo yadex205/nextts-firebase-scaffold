@@ -1,6 +1,6 @@
 {
   "name": "@yadex205/scaffold-firebase-ssr",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "SSR website scaffold for Firebase",
   "repository": "https://github.com/yadex205/scaffold-firebase-ssr",
   "author": "Kanon Kakuno <yadex205@outlook.jp>",
